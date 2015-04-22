@@ -1,14 +1,14 @@
 #!/bin/sh
 set -e -x
 git --version
-upstream=$1
-: ${upstream:=origin}
-: ${REPO:=git@github.com:hackfoldr/hackfoldr-2.0}
-git fetch $upstream
-if [ `git rev-list HEAD...$upstream/master --count` -ne 0 ]; then
-  echo "not deploying"
-  exit 1
-fi
+# upstream=$1
+# : ${upstream:=origin}
+# : ${REPO:=git@github.com:hackfoldr/hackfoldr-2.0}
+# git fetch $upstream
+# if [ `git rev-list HEAD...$upstream/master --count` -ne 0 ]; then
+#   echo "not deploying"
+#   exit 1
+# fi
 npm i
 rm -rf _public
 # XXX: use --reference when not in shallow clone
